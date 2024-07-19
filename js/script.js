@@ -1,9 +1,21 @@
-// toggle burger
-$(".burger").on("click", function () {
-    $("html").toggleClass("menu-open");
-});
-$(".menu__link").on("click", function () {
-    $("html").removeClass("menu-open");
+$(document).ready(function () {
+    // toggle burger
+    $(".burger").on("click", function () {
+        $("html").toggleClass("menu-open");
+    });
+    // closes mob nav if we click on link
+    $(".menu__link").on("click", function () {
+        $("html").removeClass("menu-open");
+    });
+
+    // closes mob nav if click occurred outside the header or on the book button
+    $(document).click(function (event) {
+        if ($("html").hasClass("menu-open")) {
+            if (!$(event.target).closest(".header").length || $(event.target).hasClass("header__book-btn")) {
+                $("html").removeClass("menu-open");
+            }
+        }
+    });
 });
 
 // changes active table

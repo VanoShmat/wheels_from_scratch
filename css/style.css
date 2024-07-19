@@ -44,8 +44,6 @@ html.popup-open {
 }
 /* -------header------- */
 .header {
-    /* padding: 31px 0; */
-    /* background-color: #fefbf7; */
     color: #fff;
     font-size: 20px;
     position: fixed;
@@ -93,6 +91,7 @@ html.popup-open {
 }
 .header__btm {
     background-color: #333;
+    transition: all 0.2s;
 }
 .header__logo {
     position: relative;
@@ -207,13 +206,14 @@ html.popup-open {
     .menu__body {
         position: fixed;
         width: 100%;
-        height: 100%;
-        top: 0;
-        left: 100%;
+        height: auto;
+        top: -100%;
+        left: 0;
+        z-index: -1;
         background-color: #333;
         padding: 80px 15px 30px;
         overflow-y: auto;
-        transition: left 0.3s;
+        transition: top 0.3s;
     }
     .menu__body::before {
         content: "";
@@ -227,15 +227,18 @@ html.popup-open {
         transition: left 0.3s;
     }
     .menu-open {
-        overflow: hidden;
+        /* overflow: hidden; */
+    }
+    .menu-open .header__btm {
+        background: #000;
     }
     .menu-open .menu__body,
     .menu-open .menu__body::before {
-        left: 0;
+        top: 0;
     }
     .menu__body .menu__list {
         flex-direction: column;
-        align-items: end;
+        align-items: center;
     }
     .menu__item {
     }
