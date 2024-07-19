@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
     <link rel="stylesheet" href="css/style.css">
     <title>Repair of tires</title>
 </head>
@@ -118,7 +119,7 @@
                             <button class="pricing__btn" onclick="showTable('minivan')">Parquet / Minivan</button>
                             <button class="pricing__btn" onclick="showTable('bus')">Bus / Jeep</button>
                         </div>
-                        <div class="pricing__tables">
+                        <div class="pricing__tables" data-simplebar>
                             <table id="car" class="pricing__table table-active">
                                 <tr>
                                     <th>Radius</th>
@@ -361,6 +362,32 @@
             <div class="page__contacts contacts" id="contacts">
                 <div class="contacts__container">
                     <h2 class="contacts__title title-section">Contacts</h2>
+                    <div class="contacts__testimonials-mob testimonials">
+                        <a href="https://www.tripadvisor.co/" target="_blank"
+                            class="testimonials__btn testimonials__btn--tripadvisor">
+                            <img src="img/contacts/tripadvisor.svg" alt="tripadvisor" class="testimonials__logo">
+                            <div class="testimonials__name-logo">Tripadvisor</div>
+                            <div class="testimonials__stars">
+                                <span class="testimonials__star"></span>
+                                <span class="testimonials__star"></span>
+                                <span class="testimonials__star"></span>
+                                <span class="testimonials__star"></span>
+                                <span class="testimonials__star"></span>
+                            </div>
+                        </a>
+                        <a href="https://www.google.com/maps/place/Oleksandra+Matrosova+Ln,+5,+Odesa,+Odes'ka+oblast,+65044/@46.4609465,30.745104,17z/data=!3m1!4b1!4m6!3m5!1s0x40c633d8043c5b07:0x957f899475e7670a!8m2!3d46.4609428!4d30.7476789!16s%2Fg%2F11cncf41f0?hl=en&entry=ttu"
+                            target="_blank" class="testimonials__btn testimonials__btn--googlemaps">
+                            <img src="img/contacts/google-maps.svg" alt="googlemaps" class="testimonials__logo">
+                            <div class="testimonials__name-logo">Google Maps</div>
+                            <div class="testimonials__stars">
+                                <img src="img/contacts/star-googlemaps.svg" alt="star" class="testimonials__star">
+                                <img src="img/contacts/star-googlemaps.svg" alt="star" class="testimonials__star">
+                                <img src="img/contacts/star-googlemaps.svg" alt="star" class="testimonials__star">
+                                <img src="img/contacts/star-googlemaps.svg" alt="star" class="testimonials__star">
+                                <img src="img/contacts/star-googlemaps.svg" alt="star" class="testimonials__star">
+                            </div>
+                        </a>
+                    </div>
                     <div class="contacts__body">
                         <div class="contacts__info">
                             <div class="contacts__details">
@@ -385,6 +412,39 @@
                                 </div>
                             </div>
                             <div class="contacts__reach-us">
+                                <div class="contacts__testimonials-pc testimonials">
+                                    <a href="https://www.tripadvisor.co/" target="_blank"
+                                        class="testimonials__btn testimonials__btn--tripadvisor">
+                                        <img src="img/contacts/tripadvisor.svg" alt="tripadvisor"
+                                            class="testimonials__logo">
+                                        <div class="testimonials__name-logo">Tripadvisor</div>
+                                        <div class="testimonials__stars">
+                                            <span class="testimonials__star"></span>
+                                            <span class="testimonials__star"></span>
+                                            <span class="testimonials__star"></span>
+                                            <span class="testimonials__star"></span>
+                                            <span class="testimonials__star"></span>
+                                        </div>
+                                    </a>
+                                    <a href="https://www.google.com/maps/place/Oleksandra+Matrosova+Ln,+5,+Odesa,+Odes'ka+oblast,+65044/@46.4609465,30.745104,17z/data=!3m1!4b1!4m6!3m5!1s0x40c633d8043c5b07:0x957f899475e7670a!8m2!3d46.4609428!4d30.7476789!16s%2Fg%2F11cncf41f0?hl=en&entry=ttu"
+                                        target="_blank" class="testimonials__btn testimonials__btn--googlemaps">
+                                        <img src="img/contacts/google-maps.svg" alt="googlemaps"
+                                            class="testimonials__logo">
+                                        <div class="testimonials__name-logo">Google Maps</div>
+                                        <div class="testimonials__stars">
+                                            <img src="img/contacts/star-googlemaps.svg" alt="star"
+                                                class="testimonials__star">
+                                            <img src="img/contacts/star-googlemaps.svg" alt="star"
+                                                class="testimonials__star">
+                                            <img src="img/contacts/star-googlemaps.svg" alt="star"
+                                                class="testimonials__star">
+                                            <img src="img/contacts/star-googlemaps.svg" alt="star"
+                                                class="testimonials__star">
+                                            <img src="img/contacts/star-googlemaps.svg" alt="star"
+                                                class="testimonials__star">
+                                        </div>
+                                    </a>
+                                </div>
                                 <p>Contact us via messenger and we will quickly provide you with all the necessary
                                     information.</p>
                                 <div class="contacts__nets">
@@ -522,7 +582,9 @@
         </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 

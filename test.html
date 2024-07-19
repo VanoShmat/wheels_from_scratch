@@ -1,183 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Repair Booking</title>
+    <title>Google Maps Rating</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+        #map-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* Співвідношення сторін 16:9 */
+            height: 0;
         }
 
-        .booking-form {
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .booking-form div {
-            margin-bottom: 10px;
-        }
-
-        .booking-form label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .booking-form input,
-        .booking-form select,
-        .booking-form textarea,
-        .booking-form button {
+        #map-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            padding: 8px;
-            box-sizing: border-box;
-        }
-
-        .booking-form button {
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .booking-form button:hover {
-            background-color: #218838;
-        }
-
-        .time-slots {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .time-slot {
-            padding: 10px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            cursor: pointer;
-        }
-
-        .time-slot.booked {
-            background-color: #d9534f;
-            color: white;
-            cursor: not-allowed;
-        }
-
-        .time-slot.selected {
-            background-color: #5bc0de;
-            color: white;
+            height: 100%;
         }
     </style>
 </head>
 
 <body>
-
-    <div class="booking-form">
-        <h2>Car Repair Booking</h2>
-        <form id="bookingForm">
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="phone">Phone:</label>
-                <input type="text" id="phone" name="phone" required>
-            </div>
-            <div>
-                <label for="carModel">Car Model:</label>
-                <input type="text" id="carModel" name="carModel" required>
-            </div>
-            <div>
-                <label for="service">Service Required:</label>
-                <select id="service" name="service" required>
-                    <option value="engine">Engine Repair</option>
-                    <option value="brakes">Brake Repair</option>
-                    <option value="oil">Oil Change</option>
-                    <option value="transmission">Transmission Repair</option>
-                </select>
-            </div>
-            <div>
-                <label for="date">Preferred Date:</label>
-                <input type="date" id="date" name="date" required>
-            </div>
-            <div id="time-slots-container" style="display:none;">
-                <label>Available Time Slots:</label>
-                <div class="time-slots" id="time-slots"></div>
-            </div>
-            <button type="submit" style="display:none;" id="submitBtn">Book Now</button>
-        </form>
+    <h1>Google Maps Rating</h1>
+    <div id="map-container">
+        <iframe id="map-iframe"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.4892311784885!2d-122.08424968468521!3d37.422065779825446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb24c5f47aedd%3A0x66c06e1826f6a27d!2sGoogleplex!5e0!3m2!1sen!2sus!4v1635534440000!5m2!1sen!2sus"
+            frameborder="0" allowfullscreen></iframe>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <div id="rating">Loading...</div>
     <script>
-        $(document).ready(function () {
-            var headerHeight = $('.header').outerHeight();
-
-            $('#date').on('change', function () {
-                var selectedDate = $(this).val();
-                if (selectedDate) {
-                    $.ajax({
-                        url: 'get_time_slots.php',
-                        type: 'POST',
-                        data: { date: selectedDate },
-                        success: function (data) {
-                            var timeSlots = JSON.parse(data);
-                            var $timeSlotsContainer = $('#time-slots');
-                            $timeSlotsContainer.empty();
-                            timeSlots.forEach(function (slot) {
-                                var $slot = $('<div class="time-slot"></div>').text(slot.time).data('time', slot.time);
-                                if (slot.booked) {
-                                    $slot.addClass('booked');
-                                }
-                                $timeSlotsContainer.append($slot);
-                            });
-                            $('#time-slots-container').show();
-                        }
-                    });
-                }
-            });
-
-            $(document).on('click', '.time-slot', function () {
-                if (!$(this).hasClass('booked')) {
-                    $('.time-slot').removeClass('selected');
-                    $(this).addClass('selected');
-                    $('#submitBtn').show();
-                }
-            });
-
-            $('#bookingForm').on('submit', function (event) {
-                event.preventDefault();
-                var formData = $(this).serializeArray();
-                var selectedTime = $('.time-slot.selected').data('time');
-                formData.push({ name: 'time', value: selectedTime });
-
-                $.ajax({
-                    url: 'booking_handler.php',
-                    type: 'POST',
-                    data: formData,
-                    success: function (data) {
-                        var response = JSON.parse(data);
-                        if (response.success) {
-                            alert('Booking successful!');
-                            location.reload();
-                        } else {
-                            alert('Booking failed. Please try again.');
-                        }
+        function fetchRating() {
+            const mapIframe = document.getElementById('map-iframe');
+            const src = mapIframe.src;
+            fetch(src)
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, 'text/html');
+                    const ratingElement = doc.querySelector('.gm-style .widget-pane-content .section-star-array');
+                    if (ratingElement) {
+                        const rating = ratingElement.innerText;
+                        document.getElementById('rating').textContent = `Rating: ${rating}`;
+                    } else {
+                        document.getElementById('rating').textContent = 'Failed to retrieve rating';
                     }
+                })
+                .catch(error => {
+                    document.getElementById('rating').textContent = 'Failed to retrieve rating';
+                    console.error('Error fetching rating:', error);
                 });
-            });
-        });
-    </script>
+        }
 
+        window.onload = fetchRating;
+    </script>
 </body>
 
 </html>

@@ -418,6 +418,21 @@ html.popup-open {
     font-size: 18px;
     overflow-x: auto;
 }
+.simplebar-track {
+    background: #f4f4f4;
+    height: 5px !important;
+    top: 0;
+    bottom: auto;
+}
+
+.simplebar-scrollbar {
+    background: #007bff; /* Колір скролбару */
+    border-radius: 2px; /* Закруглення країв скролбару */
+}
+
+.simplebar-scrollbar::before {
+    background: transparent; /* Видаляє внутрішній тіньовий елемент */
+}
 .pricing__table {
     display: none;
     margin: 0 auto;
@@ -529,7 +544,58 @@ html.popup-open {
     display: flex;
     flex-direction: column;
     justify-content: end;
+    align-items: flex-start;
     gap: 20px;
+}
+.contacts__testimonials-pc {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.contacts__testimonials-mob {
+    display: none;
+}
+.testimonials {
+}
+.testimonials__btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    min-width: 240px;
+    height: 40px;
+    padding: 5px 15px;
+
+    border-radius: 5px;
+}
+.testimonials__btn--tripadvisor {
+    box-shadow: 0 0 10px 5px #9ef3d6, 0 0 0px 2px #9ef3d6;
+    transition: all 0.3s;
+}
+.testimonials__btn--googlemaps {
+    box-shadow: 0 0 10px 5px #f5f59a, 0 0 0px 2px #f5f59a;
+    transition: all 0.3s;
+}
+.testimonials__logo {
+    max-width: 30px;
+}
+.testimonials__stars {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.testimonials__star {
+    width: 10px;
+}
+span.testimonials__star {
+    display: inline-block;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #34e0a1;
+}
+.testimonials__name-logo {
+    margin-right: 5px;
+    flex-grow: 1;
 }
 .contacts__nets {
     display: flex;
@@ -556,11 +622,32 @@ html.popup-open {
         gap: 20px;
         text-align: right;
     }
+    .testimonials {
+        flex-grow: 1;
+    }
+    .contacts__testimonials-pc {
+        flex-direction: row;
+    }
     .contacts__map {
         height: 300px;
     }
 }
+@media (max-width: 830px) {
+    .contacts__testimonials-pc {
+        display: none;
+    }
+    .contacts__testimonials-mob {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+
+        margin-bottom: 30px;
+    }
+}
 @media (max-width: 550px) {
+    .contacts__title {
+        margin-bottom: 30px;
+    }
     .contacts__info {
         flex-direction: column;
         gap: 15px;
@@ -570,6 +657,10 @@ html.popup-open {
         gap: 15px;
         text-align: left;
     }
+    .contacts__testimonials-mob {
+        flex-direction: column;
+        align-items: center;
+    }
     .contacts__map {
         height: 200px;
     }
@@ -577,6 +668,12 @@ html.popup-open {
 @media (any-hover: hover) {
     .item-contacts__info:hover {
         text-decoration: underline;
+    }
+    .testimonials__btn--tripadvisor:hover {
+        box-shadow: 0 0 10px 8px #9ef3d6, 0 0 0px 5px #9ef3d6;
+    }
+    .testimonials__btn--googlemaps:hover {
+        box-shadow: 0 0 10px 8px #f5f59a, 0 0 0px 5px #f5f59a;
     }
 }
 /* -----footer----- */
