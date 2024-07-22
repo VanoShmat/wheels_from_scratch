@@ -169,6 +169,74 @@ html.popup-open {
 .burger {
     display: none;
 }
+.lang-selector {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-selector__btn {
+    /* background: #fff; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 30px 10px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+.lang-selector__btn::after,
+.lang-selector__btn::before {
+    content: "";
+    position: absolute;
+    background-color: #fff;
+    width: 10px;
+    height: 2px;
+    top: 50%;
+    right: 10px;
+    transform: rotate(45deg);
+    transition: all 0.1s;
+}
+.lang-selector__btn::after {
+    right: 10px;
+    transform: rotate(45deg);
+}
+.lang-selector__btn::before {
+    right: 4px;
+    transform: rotate(-45deg);
+}
+.lang-selector.show .lang-selector__btn::after {
+    transform: rotate(-45deg);
+}
+.lang-selector.show .lang-selector__btn::before {
+    transform: rotate(45deg);
+}
+.lang-selector__dropdown {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    min-width: 100%;
+}
+
+.lang-selector .lang-selector__item {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.lang-selector .lang-selector__item:hover {
+    background-color: #ddd;
+}
+
+.lang-selector.show .lang-selector__dropdown {
+    display: block;
+}
 
 @media (any-hover: hover) {
     .menu__link:hover {
@@ -298,9 +366,13 @@ html.popup-open {
         margin-bottom: -1px;
     }
 }
-@media (max-width: 425.98px) {
+@media (max-width: 600px) {
+    .logo-main__text {
+        /* display: none; */
+        font-size: 18px;
+    }
     .logo-main {
-        font-size: 20px;
+        /* font-size: 20px; */
         gap: 5px;
     }
     .header__container {
@@ -310,9 +382,28 @@ html.popup-open {
         gap: 15px;
     }
 }
-@media (max-width: 370px) {
+@media (max-width: 550px) {
     .logo-main__text {
         display: none;
+    }
+}
+@media (max-width: 425.98px) {
+    .header__btn {
+        gap: 10px;
+    }
+    .book-btn {
+        padding: 10px;
+    }
+}
+@media (max-width: 375.98px) {
+    .logo-main > img {
+        width: 40px;
+    }
+    .header__btn {
+        font-size: 18px;
+    }
+    .lang-selector__btn {
+        font-size: 14px;
     }
 }
 /* -----services----- */

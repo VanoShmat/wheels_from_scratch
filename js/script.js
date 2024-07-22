@@ -37,17 +37,17 @@ $(".menu__link").on("click", function () {
     $(this).addClass("active");
 });
 
-// opens popup with booking
-$(".book-btn").on("click", function () {
-    $(".popup-book").addClass("active");
-    $("html").toggleClass("popup-open");
-});
+// // opens popup with booking
+// $(".book-btn").on("click", function () {
+//     $(".popup-book").addClass("active");
+//     $("html").toggleClass("popup-open");
+// });
 
-// closes popup with booking
-$(".popup-book__overlay, .booking__close").on("click", function () {
-    $(".popup-book").removeClass("active");
-    $("html").toggleClass("popup-open");
-});
+// // closes popup with booking
+// $(".popup-book__overlay, .booking__close").on("click", function () {
+//     $(".popup-book").removeClass("active");
+//     $("html").toggleClass("popup-open");
+// });
 
 //dropdowns in booking form
 $(document).ready(function () {

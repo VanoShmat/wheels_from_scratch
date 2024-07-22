@@ -16,7 +16,7 @@
                 <div class="header__container">
                     <a target="_blank"
                         href="https://www.google.com/maps?ll=46.460943,30.747679&z=16&t=m&hl=en&gl=UA&mapclient=embed&q=Oleksandra+Matrosova+Ln,+5+Odesa+Odes%27ka+oblast+65044"
-                        class="header__address">Matrosova Ln, 5, Odesa</a>
+                        class="header__address" data-lang="address">Matrosova Ln, 5, Odesa</a>
                     <div class="header__nets">
                         <a href="#" class="header__net social-net">
                             <img src="img/nets/telegram.svg" alt="telegram">
@@ -31,22 +31,40 @@
             </div>
             <div class="header__btm">
                 <div class="header__container">
-                    <a href="index.html" class="header__logo logo-main"><img src="img/footer/logo.svg" alt="Logo">
-                        <div class="logo-main__text"> tire service</div>
-                    </a>
+                    <div class="header__logo logo-main"><img src="img/footer/logo.svg" alt="Logo">
+                        <div class="logo-main__text" data-lang="logo-text">tire service</div>
+                    </div>
                     <div class="menu">
                         <nav class="menu__body">
                             <ul class="menu__list">
-                                <li class="menu__item"><a href="#services" class="menu__link">services</a>
+                                <li class="menu__item"><a href="#services" class="menu__link"
+                                        data-lang="menu-services">services</a>
                                 </li>
-                                <li class="menu__item"><a href="#pricing" class="menu__link">pricing</a>
+                                <li class="menu__item"><a href="#pricing" class="menu__link"
+                                        data-lang="menu-pricing">pricing</a>
                                 </li>
-                                <li class="menu__item"><a href="#contacts" class="menu__link">contacts</a></li>
+                                <li class="menu__item"><a href="#contacts" class="menu__link"
+                                        data-lang="menu-contacts">contacts</a></li>
                             </ul>
                         </nav>
                     </div>
+                    <div class="header__lang lang-selector">
+                        <button id="selected-language" class="lang-selector__btn">EN</button>
+                        <div class="lang-selector__dropdown">
+                            <a href="#" class="lang-selector__item" data-lang="en">EN</a>
+                            <a href="#" class="lang-selector__item" data-lang="pl">PL</a>
+                            <a href="#" class="lang-selector__item" data-lang="ua">UA</a>
+                        </div>
+                    </div>
                     <div class="header__btn">
-                        <button type="button" class="header__book-btn book-btn">Book</button>
+                        <button type="button" class="header__book-btn book-btn" data-lang="book-btn"
+                            data-appointlet-modal
+                            href="https://appt.link/meet-with-ivan-shmatko-B4fhco9M/in-person-meeting">Book</button>
+                        <!-- <a class="appointlet-button" data-appointlet-modal
+                            href="https://appt.link/meet-with-ivan-shmatko-B4fhco9M/in-person-meeting"
+                            style="background-color:#f1c40f;">Schedule a time</a> -->
+                        <script async defer src="https://js.appointlet.com/"></script>
+                        <link href="https://js.appointlet.com/styles.css" rel="stylesheet">
                         <button class="burger">
                             <span></span>
                         </button>
@@ -57,72 +75,75 @@
         <main class="page">
             <div class="page__services services" id="services">
                 <div class="services__container">
-                    <h1 class="services__title title-section">Our services</h1>
+                    <h1 class="services__title title-section" data-lang="services-title">Our services</h1>
                     <div class="services__body">
                         <div class="services__item">
                             <div class="services__img">
                                 <img src="img/header/logo.svg" alt="service">
                             </div>
-                            <p>Repair of tires</p>
+                            <p data-lang="service-item">Repair of tires</p>
                         </div>
                         <div class="services__item">
                             <div class="services__img">
                                 <img src="img/header/logo.svg" alt="service">
                             </div>
-                            <p>Repair of tires</p>
+                            <p data-lang="service-item">Repair of tires</p>
                         </div>
                         <div class="services__item">
                             <div class="services__img">
                                 <img src="img/header/logo.svg" alt="service">
                             </div>
-                            <p>Repair of tires</p>
+                            <p data-lang="service-item">Repair of tires</p>
                         </div>
                         <div class="services__item">
                             <div class="services__img">
                                 <img src="img/header/logo.svg" alt="service">
                             </div>
-                            <p>Repair of tires</p>
+                            <p data-lang="service-item">Repair of tires</p>
                         </div>
                         <div class="services__item">
                             <div class="services__img">
                                 <img src="img/header/logo.svg" alt="service">
                             </div>
-                            <p>Repair of tires</p>
+                            <p data-lang="service-item">Repair of tires</p>
                         </div>
                         <div class="services__item">
                             <div class="services__img">
                                 <img src="img/header/logo.svg" alt="service">
                             </div>
-                            <p>Repair of tires</p>
+                            <p data-lang="service-item">Repair of tires</p>
                         </div>
                         <div class="services__item">
                             <div class="services__img">
                                 <img src="img/header/logo.svg" alt="service">
                             </div>
-                            <p>Repair of tires</p>
+                            <p data-lang="service-item">Repair of tires</p>
                         </div>
                         <div class="services__item">
                             <div class="services__img">
                                 <img src="img/header/logo.svg" alt="service">
                             </div>
-                            <p>Repair of tires</p>
+                            <p data-lang="service-item">Repair of tires</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="page__pricing pricing" id="pricing">
                 <div class="pricing__container">
-                    <h2 class="pricing__title title-section">Pricing</h2>
+                    <h2 class="pricing__title title-section" data-lang="pricing-title">Pricing</h2>
                     <div class="pricing__body">
                         <div class="pricing__btns">
-                            <button class="pricing__btn active" onclick="showTable('car')">Cars</button>
-                            <button class="pricing__btn" onclick="showTable('minivan')">Parquet / Minivan</button>
-                            <button class="pricing__btn" onclick="showTable('bus')">Bus / Jeep</button>
+                            <button class="pricing__btn active" onclick="showTable('car')"
+                                data-lang="pricing-btn-cars">Cars</button>
+                            <button class="pricing__btn" onclick="showTable('minivan')"
+                                data-lang="pricing-btn-minivan">Parquet / Minivan</button>
+                            <button class="pricing__btn" onclick="showTable('bus')" data-lang="pricing-btn-bus">Bus /
+                                Jeep</button>
                         </div>
                         <div class="pricing__tables" data-simplebar>
                             <table id="car" class="pricing__table table-active">
                                 <tr>
-                                    <th>Radius</th>
+                                    <th data-lang="radius">Radius</th>
                                     <th>R13</th>
                                     <th>R14</th>
                                     <th>R15</th>
@@ -134,7 +155,7 @@
                                     <th>R21</th>
                                 </tr>
                                 <tr>
-                                    <td>Wheel Removal and Installation</td>
+                                    <td data-lang="wheel-removal">Wheel Removal and Installation</td>
                                     <td>50</td>
                                     <td>50</td>
                                     <td>50</td>
@@ -146,7 +167,7 @@
                                     <td>60</td>
                                 </tr>
                                 <tr>
-                                    <td>Tire Fitting</td>
+                                    <td data-lang="tire-fitting">Tire Fitting</td>
                                     <td>50</td>
                                     <td>50</td>
                                     <td>50</td>
@@ -158,7 +179,7 @@
                                     <td>70</td>
                                 </tr>
                                 <tr>
-                                    <td>Balancing</td>
+                                    <td data-lang="balancing">Balancing</td>
                                     <td>50</td>
                                     <td>50</td>
                                     <td>50</td>
@@ -170,7 +191,7 @@
                                     <td>70</td>
                                 </tr>
                                 <tr>
-                                    <td>Total for 4 Wheels</td>
+                                    <td data-lang="total-4-wheels">Total for 4 Wheels</td>
                                     <td>600</td>
                                     <td>600</td>
                                     <td>600</td>
@@ -182,7 +203,7 @@
                                     <td>800</td>
                                 </tr>
                                 <tr>
-                                    <td>Sandblasting of Metal Discs</td>
+                                    <td data-lang="sandblasting">Sandblasting of Metal Discs</td>
                                     <td>250</td>
                                     <td>250</td>
                                     <td>250</td>
@@ -194,7 +215,7 @@
                                     <td>300</td>
                                 </tr>
                                 <tr>
-                                    <td>Re-Tiring</td>
+                                    <td data-lang="re-tiring">Re-Tiring</td>
                                     <td>500</td>
                                     <td>500</td>
                                     <td>500</td>
@@ -206,70 +227,71 @@
                                     <td>850</td>
                                 </tr>
                                 <tr>
-                                    <td>Brake Pad Replacement</td>
-                                    <td>from 200</td>
-                                    <td>from 200</td>
-                                    <td>from 200</td>
-                                    <td>from 200</td>
-                                    <td>from 200</td>
-                                    <td>from 200</td>
-                                    <td>from 200</td>
-                                    <td>from 200</td>
-                                    <td>from 200</td>
+                                    <td data-lang="brake-pad-replacement">Brake Pad Replacement</td>
+                                    <td><span data-lang="from">from</span> 200</td>
+                                    <td><span data-lang="from">from</span> 200</td>
+                                    <td><span data-lang="from">from</span> 200</td>
+                                    <td><span data-lang="from">from</span> 200</td>
+                                    <td><span data-lang="from">from</span> 200</td>
+                                    <td><span data-lang="from">from</span> 200</td>
+                                    <td><span data-lang="from">from</span> 200</td>
+                                    <td><span data-lang="from">from</span> 200</td>
+                                    <td><span data-lang="from">from</span> 200</td>
                                 </tr>
                                 <tr>
-                                    <td>Alloy Wheel Repair</td>
-                                    <td>from 150</td>
-                                    <td>from 150</td>
-                                    <td>from 150</td>
-                                    <td>from 150</td>
-                                    <td>from 150</td>
-                                    <td>from 150</td>
-                                    <td>from 150</td>
-                                    <td>from 150</td>
-                                    <td>from 150</td>
+                                    <td data-lang="alloy-wheel-repair">Alloy Wheel Repair</td>
+                                    <td><span data-lang="from">from</span> 150</td>
+                                    <td><span data-lang="from">from</span> 150</td>
+                                    <td><span data-lang="from">from</span> 150</td>
+                                    <td><span data-lang="from">from</span> 150</td>
+                                    <td><span data-lang="from">from</span> 150</td>
+                                    <td><span data-lang="from">from</span> 150</td>
+                                    <td><span data-lang="from">from</span> 150</td>
+                                    <td><span data-lang="from">from</span> 150</td>
+                                    <td><span data-lang="from">from</span> 150</td>
                                 </tr>
                                 <tr>
-                                    <td>Steel Wheel Repair</td>
-                                    <td>from 100</td>
-                                    <td>from 100</td>
-                                    <td>from 100</td>
-                                    <td>from 100</td>
-                                    <td>from 100</td>
-                                    <td>from 100</td>
-                                    <td>from 100</td>
-                                    <td>from 100</td>
-                                    <td>from 100</td>
+                                    <td data-lang="steel-wheel-repair">Steel Wheel Repair</td>
+                                    <td><span data-lang="from">from</span> 100</td>
+                                    <td><span data-lang="from">from</span> 100</td>
+                                    <td><span data-lang="from">from</span> 100</td>
+                                    <td><span data-lang="from">from</span> 100</td>
+                                    <td><span data-lang="from">from</span> 100</td>
+                                    <td><span data-lang="from">from</span> 100</td>
+                                    <td><span data-lang="from">from</span> 100</td>
+                                    <td><span data-lang="from">from</span> 100</td>
+                                    <td><span data-lang="from">from</span> 100</td>
                                 </tr>
                                 <tr>
-                                    <td>Rust Removal from Discs</td>
-                                    <td>from 50</td>
-                                    <td>from 50</td>
-                                    <td>from 50</td>
-                                    <td>from 50</td>
-                                    <td>from 50</td>
-                                    <td>from 50</td>
-                                    <td>from 50</td>
-                                    <td>from 50</td>
-                                    <td>from 50</td>
+                                    <td data-lang="rust-removal">Rust Removal <span data-lang="from">from</span> Discs
+                                    </td>
+                                    <td><span data-lang="from">from</span> 50</td>
+                                    <td><span data-lang="from">from</span> 50</td>
+                                    <td><span data-lang="from">from</span> 50</td>
+                                    <td><span data-lang="from">from</span> 50</td>
+                                    <td><span data-lang="from">from</span> 50</td>
+                                    <td><span data-lang="from">from</span> 50</td>
+                                    <td><span data-lang="from">from</span> 50</td>
+                                    <td><span data-lang="from">from</span> 50</td>
+                                    <td><span data-lang="from">from</span> 50</td>
                                 </tr>
                                 <tr>
-                                    <td>Metal Valve</td>
-                                    <td>from 50</td>
-                                    <td>from 50</td>
-                                    <td>from 50</td>
-                                    <td>from 50</td>
-                                    <td>from 50</td>
-                                    <td>from 50</td>
-                                    <td>from 50</td>
-                                    <td>from 50</td>
-                                    <td>from 50</td>
+                                    <td data-lang="metal-valve">Metal Valve</td>
+                                    <td><span data-lang="from">from</span> 50</td>
+                                    <td><span data-lang="from">from</span> 50</td>
+                                    <td><span data-lang="from">from</span> 50</td>
+                                    <td><span data-lang="from">from</span> 50</td>
+                                    <td><span data-lang="from">from</span> 50</td>
+                                    <td><span data-lang="from">from</span> 50</td>
+                                    <td><span data-lang="from">from</span> 50</td>
+                                    <td><span data-lang="from">from</span> 50</td>
+                                    <td><span data-lang="from">from</span> 50</td>
                                 </tr>
                             </table>
 
                             <table id="minivan" class="pricing__table">
                                 <tr>
-                                    <th>Radius</th>
+                                    <th data-lang="radius">Radius</th>
                                     <th>R16</th>
                                     <th>R17</th>
                                     <th>R18</th>
@@ -278,7 +300,7 @@
                                     <th>R21</th>
                                 </tr>
                                 <tr>
-                                    <td>Wheel Removal and Installation</td>
+                                    <td data-lang="wheel-removal">Wheel Removal and Installation</td>
                                     <td>50</td>
                                     <td>55</td>
                                     <td>60</td>
@@ -287,7 +309,7 @@
                                     <td>70</td>
                                 </tr>
                                 <tr>
-                                    <td>Tire Fitting</td>
+                                    <td data-lang="tire-fitting">Tire Fitting</td>
                                     <td>45</td>
                                     <td>45</td>
                                     <td>50</td>
@@ -296,7 +318,7 @@
                                     <td>70</td>
                                 </tr>
                                 <tr>
-                                    <td>Balancing</td>
+                                    <td data-lang="balancing">Balancing</td>
                                     <td>45</td>
                                     <td>45</td>
                                     <td>50</td>
@@ -305,7 +327,7 @@
                                     <td>70</td>
                                 </tr>
                                 <tr>
-                                    <td>Total for 4 Wheels</td>
+                                    <td data-lang="total-4-wheels">Total for 4 Wheels</td>
                                     <td>560</td>
                                     <td>600</td>
                                     <td>660</td>
@@ -317,35 +339,35 @@
 
                             <table id="bus" class="pricing__table">
                                 <tr>
-                                    <th>Radius</th>
+                                    <th data-lang="radius">Radius</th>
                                     <th>R18</th>
                                     <th>R19</th>
                                     <th>R20</th>
                                     <th>R21</th>
                                 </tr>
                                 <tr>
-                                    <td>Wheel Removal and Installation</td>
+                                    <td data-lang="wheel-removal">Wheel Removal and Installation</td>
                                     <td>50</td>
                                     <td>55</td>
                                     <td>65</td>
                                     <td>70</td>
                                 </tr>
                                 <tr>
-                                    <td>Tire Fitting</td>
+                                    <td data-lang="tire-fitting">Tire Fitting</td>
                                     <td>50</td>
                                     <td>55</td>
                                     <td>65</td>
                                     <td>70</td>
                                 </tr>
                                 <tr>
-                                    <td>Balancing</td>
+                                    <td data-lang="balancing">Balancing</td>
                                     <td>50</td>
                                     <td>55</td>
                                     <td>65</td>
                                     <td>70</td>
                                 </tr>
                                 <tr>
-                                    <td>Total for 4 Wheels</td>
+                                    <td data-lang="total-4-wheels">Total for 4 Wheels</td>
                                     <td>600</td>
                                     <td>720</td>
                                     <td>800</td>
@@ -355,18 +377,20 @@
                         </div>
                     </div>
                     <div class="pricing__book">
-                        <button type="button" class="pricing__btn-book book-btn">Book</button>
+                        <button type="button" class="pricing__btn-book book-btn" data-lang="book-btn"
+                            data-appointlet-modal
+                            href="https://appt.link/meet-with-ivan-shmatko-B4fhco9M/in-person-meeting">Book</button>
                     </div>
                 </div>
             </div>
             <div class="page__contacts contacts" id="contacts">
                 <div class="contacts__container">
-                    <h2 class="contacts__title title-section">Contacts</h2>
+                    <h2 class="contacts__title title-section" data-lang="contacts-title">Contacts</h2>
                     <div class="contacts__testimonials-mob testimonials">
                         <a href="https://www.tripadvisor.co/" target="_blank"
                             class="testimonials__btn testimonials__btn--tripadvisor">
                             <img src="img/contacts/tripadvisor.svg" alt="tripadvisor" class="testimonials__logo">
-                            <div class="testimonials__name-logo">Tripadvisor</div>
+                            <div class="testimonials__name-logo" data-lang="testimonials-tripadvisor">Tripadvisor</div>
                             <div class="testimonials__stars">
                                 <span class="testimonials__star"></span>
                                 <span class="testimonials__star"></span>
@@ -378,7 +402,7 @@
                         <a href="https://www.google.com/maps/place/Oleksandra+Matrosova+Ln,+5,+Odesa,+Odes'ka+oblast,+65044/@46.4609465,30.745104,17z/data=!3m1!4b1!4m6!3m5!1s0x40c633d8043c5b07:0x957f899475e7670a!8m2!3d46.4609428!4d30.7476789!16s%2Fg%2F11cncf41f0?hl=en&entry=ttu"
                             target="_blank" class="testimonials__btn testimonials__btn--googlemaps">
                             <img src="img/contacts/google-maps.svg" alt="googlemaps" class="testimonials__logo">
-                            <div class="testimonials__name-logo">Google Maps</div>
+                            <div class="testimonials__name-logo" data-lang="testimonials-googlemaps">Google Maps</div>
                             <div class="testimonials__stars">
                                 <img src="img/contacts/star-googlemaps.svg" alt="star" class="testimonials__star">
                                 <img src="img/contacts/star-googlemaps.svg" alt="star" class="testimonials__star">
@@ -395,11 +419,7 @@
                                     <img src="img/contacts/location.svg" alt="Location" class="item-contacts__img">
                                     <a target="_blank"
                                         href="https://www.google.com/maps?ll=46.460943,30.747679&z=16&t=m&hl=en&gl=UA&mapclient=embed&q=Oleksandra+Matrosova+Ln,+5+Odesa+Odes%27ka+oblast+65044"
-                                        class="item-contacts__info">Matrosova Ln, 5, Odesa</a>
-                                </div>
-                                <div class="contacts__tel item-contacts">
-                                    <img src="img/contacts/phone.svg" alt="Phone" class="item-contacts__img">
-                                    <a href="tel:+380501213145" class="item-contacts__info">+38(050)-12-23-451</a>
+                                        class="item-contacts__info" data-lang="address">Matrosova Ln, 5, Odesa</a>
                                 </div>
                                 <div class="contacts__tel item-contacts">
                                     <img src="img/contacts/phone.svg" alt="Phone" class="item-contacts__img">
@@ -407,8 +427,8 @@
                                 </div>
                                 <div class="contacts__mail item-contacts">
                                     <img src="img/contacts/mail.svg" alt="Mail" class="item-contacts__img">
-                                    <a href="mailto:fsd@gmail.com"
-                                        class="item-contacts__info">tires_repair@gmail.com</a>
+                                    <a href="mailto:fsd@gmail.com" class="item-contacts__info"
+                                        data-lang="email">tires_repair@gmail.com</a>
                                 </div>
                             </div>
                             <div class="contacts__reach-us">
@@ -417,7 +437,8 @@
                                         class="testimonials__btn testimonials__btn--tripadvisor">
                                         <img src="img/contacts/tripadvisor.svg" alt="tripadvisor"
                                             class="testimonials__logo">
-                                        <div class="testimonials__name-logo">Tripadvisor</div>
+                                        <div class="testimonials__name-logo" data-lang="testimonials-tripadvisor">
+                                            Tripadvisor</div>
                                         <div class="testimonials__stars">
                                             <span class="testimonials__star"></span>
                                             <span class="testimonials__star"></span>
@@ -430,7 +451,8 @@
                                         target="_blank" class="testimonials__btn testimonials__btn--googlemaps">
                                         <img src="img/contacts/google-maps.svg" alt="googlemaps"
                                             class="testimonials__logo">
-                                        <div class="testimonials__name-logo">Google Maps</div>
+                                        <div class="testimonials__name-logo" data-lang="testimonials-googlemaps">Google
+                                            Maps</div>
                                         <div class="testimonials__stars">
                                             <img src="img/contacts/star-googlemaps.svg" alt="star"
                                                 class="testimonials__star">
@@ -445,8 +467,8 @@
                                         </div>
                                     </a>
                                 </div>
-                                <p>Contact us via messenger and we will quickly provide you with all the necessary
-                                    information.</p>
+                                <p data-lang="contact-msg">Contact us via messenger and we will quickly provide you with
+                                    all the necessary information.</p>
                                 <div class="contacts__nets">
                                     <a href="#" class="contacts__net social-net">
                                         <img src="img/nets/telegram.svg" alt="telegram">
@@ -471,58 +493,58 @@
                 <div class="popup-book__overlay"></div>
                 <div class="popup-book__body booking">
                     <div class="booking__close"></div>
-                    <h3 class="booking__title">Fill out the form</h3>
+                    <h3 class="booking__title" data-lang="booking-title">Fill out the form</h3>
                     <form action="#" class="booking__form">
                         <div class="booking__fields">
                             <div class="booking__item dropdown">
-                                <label class="booking__label">Car model</label>
-                                <button type="button" class="dropdown__button">всі</button>
+                                <label class="booking__label" data-lang="car-model">Car model</label>
+                                <button type="button" class="dropdown__button" data-lang="all">всі</button>
                                 <ul class="dropdown__list">
-                                    <li class="dropdown__item">всі</li>
-                                    <li class="dropdown__item">легкові</li>
-                                    <li class="dropdown__item">легковантажні</li>
-                                    <li class="dropdown__item">вантажні</li>
-                                    <li class="dropdown__item">мото, квадро</li>
-                                    <li class="dropdown__item">спеціальні</li>
+                                    <li class="dropdown__item" data-lang="all">всі</li>
+                                    <li class="dropdown__item" data-lang="passenger">легкові</li>
+                                    <li class="dropdown__item" data-lang="light-trucks">легковантажні</li>
+                                    <li class="dropdown__item" data-lang="trucks">вантажні</li>
+                                    <li class="dropdown__item" data-lang="moto">мото, квадро</li>
+                                    <li class="dropdown__item" data-lang="special">спеціальні</li>
                                 </ul>
                                 <input type="hidden" name="category1" class="dropdown__input">
                             </div>
                             <div class="booking__item dropdown">
-                                <label class="booking__label">Body type</label>
-                                <button type="button" class="dropdown__button">всі</button>
+                                <label class="booking__label" data-lang="body-type">Body type</label>
+                                <button type="button" class="dropdown__button" data-lang="all">всі</button>
                                 <ul class="dropdown__list">
-                                    <li class="dropdown__item">всі</li>
-                                    <li class="dropdown__item">легкові</li>
-                                    <li class="dropdown__item">легковантажні</li>
-                                    <li class="dropdown__item">вантажні</li>
-                                    <li class="dropdown__item">мото, квадро</li>
-                                    <li class="dropdown__item">спеціальні</li>
+                                    <li class="dropdown__item" data-lang="all">всі</li>
+                                    <li class="dropdown__item" data-lang="passenger">легкові</li>
+                                    <li class="dropdown__item" data-lang="light-trucks">легковантажні</li>
+                                    <li class="dropdown__item" data-lang="trucks">вантажні</li>
+                                    <li class="dropdown__item" data-lang="moto">мото, квадро</li>
+                                    <li class="dropdown__item" data-lang="special">спеціальні</li>
                                 </ul>
                                 <input type="hidden" name="category2" class="dropdown__input">
                             </div>
                             <div class="booking__item dropdown">
-                                <label class="booking__label">Radius</label>
-                                <button type="button" class="dropdown__button">всі</button>
+                                <label class="booking__label" data-lang="radius">Radius</label>
+                                <button type="button" class="dropdown__button" data-lang="all">всі</button>
                                 <ul class="dropdown__list">
-                                    <li class="dropdown__item">всі</li>
-                                    <li class="dropdown__item">легкові</li>
-                                    <li class="dropdown__item">легковантажні</li>
-                                    <li class="dropdown__item">вантажні</li>
-                                    <li class="dropdown__item">мото, квадро</li>
-                                    <li class="dropdown__item">спеціальні</li>
+                                    <li class="dropdown__item" data-lang="all">всі</li>
+                                    <li class="dropdown__item" data-lang="passenger">легкові</li>
+                                    <li class="dropdown__item" data-lang="light-trucks">легковантажні</li>
+                                    <li class="dropdown__item" data-lang="trucks">вантажні</li>
+                                    <li class="dropdown__item" data-lang="moto">мото, квадро</li>
+                                    <li class="dropdown__item" data-lang="special">спеціальні</li>
                                 </ul>
                                 <input type="hidden" name="category3" class="dropdown__input">
                             </div>
                             <div class="booking__item">
-                                <label class="booking__label">Phone number</label>
+                                <label class="booking__label" data-lang="phone-number">Phone number</label>
                                 <input type="tel" name="phone" class="booking__input">
                             </div>
                             <div class="booking__item ">
-                                <label class="booking__label">Tell us about your problem</label>
+                                <label class="booking__label" data-lang="problem">Tell us about your problem</label>
                                 <textarea name="problem" class="booking__input"></textarea>
                             </div>
                         </div>
-                        <button type="submit" class="booking__submit">Submit</button>
+                        <button type="submit" class="booking__submit" data-lang="submit">Submit</button>
                     </form>
                 </div>
             </div>
@@ -530,18 +552,18 @@
         <footer class="footer">
             <div class="footer__container">
                 <a href="index.html" class="footer__logo logo-main"><img src="img/footer/logo.svg" alt="Logo">
-                    <div class="logo-main__text"> tire service</div>
+                    <div class="logo-main__text" data-lang="logo-text">tire service</div>
                 </a>
                 <div class="footer__menu menu-footer">
                     <ul class="menu-footer__list">
                         <li class="menu-footer__item">
-                            <a href="#" class="menu-footer__link">services</a>
+                            <a href="#" class="menu-footer__link" data-lang="menu-services">services</a>
                         </li>
                         <li class="menu-footer__item">
-                            <a href="#" class="menu-footer__link">prising</a>
+                            <a href="#" class="menu-footer__link" data-lang="menu-pricing">pricing</a>
                         </li>
                         <li class="menu-footer__item">
-                            <a href="#" class="menu-footer__link">contacts</a>
+                            <a href="#" class="menu-footer__link" data-lang="menu-contacts">contacts</a>
                         </li>
                     </ul>
                 </div>
@@ -551,11 +573,12 @@
                             <img src="img/footer/location.svg" alt="Location" class="item-contacts__img">
                             <a target="_blank"
                                 href="https://www.google.com/maps?ll=46.460943,30.747679&z=16&t=m&hl=en&gl=UA&mapclient=embed&q=Oleksandra+Matrosova+Ln,+5+Odesa+Odes%27ka+oblast+65044"
-                                class="item-contacts__info">Matrosova Ln, 5, Odesa</a>
+                                class="item-contacts__info" data-lang="address">Matrosova Ln, 5, Odesa</a>
                         </div>
                         <div class="info-footer__mail item-contacts">
                             <img src="img/footer/mail.svg" alt="Mail" class="item-contacts__img">
-                            <a href="mailto:fsd@gmail.com" class="item-contacts__info">tires_repair@gmail.com</a>
+                            <a href="mailto:fsd@gmail.com" class="item-contacts__info"
+                                data-lang="email">tires_repair@gmail.com</a>
                         </div>
                     </div>
                     <div class="footer__contact contact-footer">
@@ -582,10 +605,10 @@
         </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
-        </script>
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/lang.js"></script>
 </body>
 
 </html>
